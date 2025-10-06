@@ -1,0 +1,24 @@
+// datasource and generator
+// Using SQLite by default; replace with PostgreSQL in production if needed
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model WaitlistUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  firstName    String? 
+  lastName     String? 
+  phone        String? 
+  state        String? 
+  ageRange     String? 
+  sportsbooks  Json?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
