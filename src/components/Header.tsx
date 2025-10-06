@@ -52,67 +52,54 @@ export function Header() {
     <header className={`fixed top-0 left-0 right-0 z-50 w-full border-b border-zinc-800/80 bg-black/40 backdrop-blur transition-transform duration-300 ${
       isVisible ? 'translate-y-0' : '-translate-y-full'
     }`}>
-      <div className="container-page flex flex-row h-16 items-center justify-between">
+      <div className="container-page flex flex-row h-16 items-center justify-between w-full">
+        {/* Logo - Left side */}
         <Link href="/" className="flex items-center gap-2 text-white flex-shrink-0">
           <Image src="/images/iso-icon.png" alt="Regen" width={20} height={20} />
           <span className="text-lg font-bold" style={{ color: "#14c992" }}>Regen</span>
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="relative md:hidden w-[300px] p-2 overflow-hidden text-zinc-300 hover:text-white transition-colors duration-200 flex-shrink-0 group"
-            aria-label="Toggle mobile menu"
-          >
-            <div className="w-6 h-6 flex  flex-col justify-center items-center space-y-1">
-              <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
-              }`}></span>
-              <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                isMobileMenuOpen ? 'opacity-0' : ''
-              }`}></span>
-              <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
-              }`}></span>
-            </div>
-          </button>
         </Link>
 
-        {/* Desktop Navigation */}
-        {!isMobile && (
-          <nav className="flex items-center gap-6 text-sm text-zinc-300">
-            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
-            <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms</Link>
-            <button 
-              onClick={() => scrollToSection('waitlist')}
-              className="group inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105"
-              style={{
-                background: "linear-gradient(135deg, #183731 0%, #1f5e4c 100%)"
-              }}
-            >
-              Join Waitlist
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
-          </nav>
-        )}
+        {/* Right side - Desktop Navigation or Mobile Menu */}
+        <div className="flex items-center">
+          {/* Desktop Navigation */}
+          {!isMobile && (
+            <nav className="flex items-center gap-6 text-sm text-zinc-300">
+              <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
+              <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms</Link>
+              <button 
+                onClick={() => scrollToSection('waitlist')}
+                className="group inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105"
+                style={{
+                  background: "linear-gradient(135deg, #183731 0%, #1f5e4c 100%)"
+                }}
+              >
+                Join Waitlist
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </button>
+            </nav>
+          )}
 
-        {/* Mobile Menu Button */}
-        {isMobile && (
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="relative p-2 text-zinc-300 hover:text-white transition-colors duration-200 flex-shrink-0 group"
-            aria-label="Toggle mobile menu"
-          >
-            <div className="w-6 h-6 flex flex-col justify-center items-center space-y-1">
-              <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
-              }`}></span>
-              <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                isMobileMenuOpen ? 'opacity-0' : ''
-              }`}></span>
-              <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
-              }`}></span>
-            </div>
-          </button>
-        )}
+          {/* Mobile Menu Button */}
+          {isMobile && (
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="relative p-2 text-zinc-300 hover:text-white transition-colors duration-200 flex-shrink-0 group"
+              aria-label="Toggle mobile menu"
+            >
+              <div className="w-6 h-6 flex flex-col justify-center items-center space-y-1">
+                <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
+                  isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+                }`}></span>
+                <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
+                  isMobileMenuOpen ? 'opacity-0' : ''
+                }`}></span>
+                <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
+                  isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
+                }`}></span>
+              </div>
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Mobile Menu */}

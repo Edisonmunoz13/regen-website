@@ -16,7 +16,7 @@ export function Hero() {
           <span className="text-emerald-500">Stack cash automatically.</span>
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-balance text-zinc-300">
-          Regen analyzes your sports betting activity and saves automatically from wins and smart rules.
+          Regen links to your sportsbook, and saves you cash with every bet.
         </p>
         <div className="mx-auto mt-8 flex flex-col items-center gap-4 sm:flex-row sm:max-w-lg sm:gap-2">
           <input

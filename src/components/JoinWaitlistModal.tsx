@@ -26,6 +26,7 @@ const Schema = z.object({
   state: z.string().optional(),
   ageRange: z.string().optional(),
   sportsbooks: z.array(z.string()).optional(),
+  otherSportsbook: z.string().optional(),
 });
 
 type FormValues = z.infer<typeof Schema>;
@@ -36,6 +37,7 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
   const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm<FormValues>({ resolver: zodResolver(Schema) });
 
   const selectedSportsbooks = watch("sportsbooks") || [];
+  const showOtherField = selectedSportsbooks.includes("Other");
 
   const onToggleSportsbook = (name: string) => {
     const set = new Set(selectedSportsbooks);
@@ -116,6 +118,15 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
                       </label>
                     ))}
                   </div>
+                  {showOtherField && (
+                    <div className="mt-3">
+                      <input 
+                        className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm" 
+                        placeholder="Please specify other sportsbook" 
+                        {...register("otherSportsbook")} 
+                      />
+                    </div>
+                  )}
                 </div>
 
                 <button
