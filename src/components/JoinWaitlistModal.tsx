@@ -141,8 +141,8 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
             </div>
           ) : (
             <div className="grid gap-4 text-zinc-800">
-              <Dialog.Title className="text-xl font-semibold">Thanks for joining!</Dialog.Title>
-              <p className="text-zinc-600">We will reach out soon. Meanwhile, here is a preview of the app.</p>
+              <Dialog.Title className="text-xl font-semibold">Successfully signed up!</Dialog.Title>
+              <p className="text-zinc-600">You should be receiving an email soon with further instructions.</p>
               <div className="overflow-hidden rounded-lg border">
                 <Image src="/app-preview.jpg" alt="Regen App" width={1200} height={800} />
               </div>
