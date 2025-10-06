@@ -13,15 +13,15 @@ export function Footer() {
 
           {/* Text (wider) */}
           <div className="lg:col-span-3">
-            <p className="text-zinc-400 max-w-3xl">
+            <p className="text-zinc-400 max-w-3xl text-sm sm:text-base">
               Bet as usual. Stack cash automatically. Regen analyzes your sports betting activity and creates automatic savings.
             </p>
           </div>
 
           {/* Legal */}
           <div className="lg:col-span-1">
-            <h3 className="text-white font-semibold mb-4">Legal</h3>
-            <nav className="flex flex-col gap-3 text-sm text-zinc-400">
+            <h3 className="text-white font-semibold mb-4 text-sm sm:text-base">Legal</h3>
+            <nav className="flex flex-col gap-3 text-xs sm:text-sm text-zinc-400">
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
             </nav>
@@ -29,14 +29,14 @@ export function Footer() {
 
           {/* Contact */}
           <div className="lg:col-span-1">
-            <h3 className="text-white font-semibold mb-4">Contact</h3>
-            <p className="text-sm text-zinc-400">support@regeninvest.co</p>
+            <h3 className="text-white font-semibold mb-4 text-sm sm:text-base">Contact</h3>
+            <p className="text-xs sm:text-sm text-zinc-400">support@regeninvest.co</p>
           </div>
         </div>
 
         {/* Copyright row */}
         <div className="mt-10 border-t border-zinc-800/60 pt-6">
-          <p className="text-sm text-zinc-500">© 2025 Regen. All rights reserved.</p>
+          <p className="text-xs sm:text-sm text-zinc-500">© 2025 Regen. All rights reserved.</p>
         </div>
       </div>
     </footer>

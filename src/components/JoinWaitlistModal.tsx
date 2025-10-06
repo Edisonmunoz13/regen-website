@@ -39,7 +39,11 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
 
   const onToggleSportsbook = (name: string) => {
     const set = new Set(selectedSportsbooks);
-    set.has(name) ? set.delete(name) : set.add(name);
+    if (set.has(name)) {
+      set.delete(name);
+    } else {
+      set.add(name);
+    }
     setValue("sportsbooks", Array.from(set));
   };
 
@@ -58,7 +62,7 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
       <div className="fixed inset-0 bg-black/50" aria-hidden="true" onClick={onClose} />
       <div className="fixed inset-0 grid place-items-center p-4" onClick={onClose}>
         <Dialog.Panel 
-          className="w-full max-w-2xl rounded-xl bg-white p-6 shadow-2xl" 
+          className="w-full max-w-lg mx-auto rounded-xl bg-white p-4 sm:p-6 shadow-2xl max-h-[90vh] overflow-y-auto" 
           onClick={(e) => e.stopPropagation()}
         >
           <button
@@ -100,7 +104,7 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
 
                 <div>
                   <p className="mb-2 text-sm font-medium text-zinc-700">What sportsbooks do you use? (Select all that apply)</p>
-                  <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {sportsbookOptions.map((name) => (
                       <label key={name} className="flex items-center gap-2 text-sm text-zinc-700">
                         <input

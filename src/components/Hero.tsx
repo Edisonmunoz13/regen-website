@@ -18,14 +18,14 @@ export function Hero() {
         <p className="mx-auto mt-6 max-w-2xl text-balance text-zinc-300">
           Regen analyzes your sports betting activity and saves automatically from wins and smart rules.
         </p>
-        <div className="mx-auto mt-8 flex  max-w-lg items-center gap-2">
+        <div className="mx-auto mt-8 flex flex-col items-center gap-4 sm:flex-row sm:max-w-lg sm:gap-2">
           <input
             className="w-full rounded-md bg-white px-3 py-2 text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             placeholder="Enter your email"
             onFocus={() => setOpen(true)}
           />
           <button
-            className="group inline-flex w-[40%] border-none items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105"
+            className="group inline-flex w-full sm:w-[40%] border-none items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105"
             style={{ background: "linear-gradient(135deg, #183731 0%, #1f5e4c 100%)" }}
             onClick={() => setOpen(true)}
           >

@@ -4,13 +4,17 @@
   --regen-green: #16c388;
 }
 
-html { color-scheme: dark; }
+html { 
+  color-scheme: dark; 
+  overflow-x: hidden;
+}
 
 body {
   /* Regen mobile gradient: [#0B1410, #13241B, #0B1410] */
   background: linear-gradient(180deg, #0B1410 0%, #13241B 50%, #0B1410 100%);
   background-attachment: fixed;
   color: #e5e7eb; /* zinc-200 */
+  overflow-x: hidden;
 }
 
 .container-page {
@@ -20,6 +24,20 @@ body {
   max-width: 72rem;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-page {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-page {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .btn-primary {

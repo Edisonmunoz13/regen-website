@@ -1,4 +1,4 @@
-import { Brain, RefreshCw, Lightbulb, Search, PiggyBank, TrendingUp, BarChart3, Target } from "lucide-react";
+import { Brain, RefreshCw, Lightbulb, Search, PiggyBank } from "lucide-react";
 import Image from "next/image";
 
 export function RegenAISection() {
