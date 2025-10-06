@@ -4,12 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { JoinWaitlistModal } from "./JoinWaitlistModal";
 
 export function Header() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     // Check if mobile on mount and resize
@@ -64,10 +66,12 @@ export function Header() {
           {/* Desktop Navigation */}
           {!isMobile && (
             <nav className="flex items-center gap-6 text-sm text-zinc-300">
+              <span className="text-zinc-500 cursor-not-allowed">Blog</span>
+              <Link href="/about" className="hover:text-white transition-colors">About</Link>
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
               <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms</Link>
               <button 
-                onClick={() => scrollToSection('waitlist')}
+                onClick={() => setIsModalOpen(true)}
                 className="group inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105"
                 style={{
                   background: "linear-gradient(135deg, #183731 0%, #1f5e4c 100%)"
@@ -107,6 +111,14 @@ export function Header() {
         <div className="border-t border-zinc-800/80 bg-black backdrop-blur absolute top-full left-0 z-40 w-[300px]">
           <div className="py-6 px-4 space-y-6">
             <nav className="flex flex-col gap-4 text-sm text-zinc-300">
+              <span className="text-zinc-500 cursor-not-allowed py-2">Blog</span>
+              <Link 
+                href="/about" 
+                className="hover:text-white transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </Link>
               <Link 
                 href="/privacy-policy" 
                 className="hover:text-white transition-colors py-2"
@@ -124,7 +136,7 @@ export function Header() {
             </nav>
             <button 
               onClick={() => {
-                scrollToSection('waitlist');
+                setIsModalOpen(true);
                 setIsMobileMenuOpen(false);
               }}
               className="group w-full inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold text-white transition-all hover:scale-105"
@@ -138,6 +150,12 @@ export function Header() {
           </div>
         </div>
       )}
+
+      {/* Join Waitlist Modal */}
+      <JoinWaitlistModal 
+        open={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </header>
   );
 }
