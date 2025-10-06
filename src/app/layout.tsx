@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Regen — Bet as usual. Stack cash automatically.",
   description: "Regen analyzes your sports betting to create automatic savings.",
+  icons: {
+    icon: "/images/iso-icon.png",
+    shortcut: "/images/iso-icon.png",
+    apple: "/images/iso-icon.png",
+  },
 };
 
 export default function RootLayout({
