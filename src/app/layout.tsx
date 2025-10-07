@@ -20,6 +20,19 @@ export const metadata: Metadata = {
     shortcut: "/images/iso-icon.png",
     apple: "/images/iso-icon.png",
   },
+  openGraph: {
+    title: "Regen — Bet as usual. Stack cash automatically.",
+    description: "Regen analyzes your sports betting to create automatic savings.",
+    url: "https://regen-website-steel.vercel.app",
+    siteName: "Regen",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Regen — Bet as usual. Stack cash automatically.",
+    description: "Regen analyzes your sports betting to create automatic savings.",
+  },
 };
 
 export default function RootLayout({
