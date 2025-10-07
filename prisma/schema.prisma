@@ -1,24 +1,25 @@
 // datasource and generator
-// Using SQLite by default; replace with PostgreSQL in production if needed
+// Using PostgreSQL with Prisma Accelerate
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model WaitlistUser {
-  id           String   @id @default(cuid())
-  email        String   @unique
-  firstName    String? 
-  lastName     String? 
-  phone        String? 
-  state        String? 
-  ageRange     String? 
-  sportsbooks  Json?
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  id               String   @id @default(cuid())
+  email            String   @unique
+  firstName        String? 
+  lastName         String? 
+  phone            String? 
+  state            String? 
+  ageRange         String? 
+  sportsbooks      Json?
+  otherSportsbook  String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 }

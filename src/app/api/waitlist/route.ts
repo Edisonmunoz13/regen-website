@@ -10,12 +10,13 @@ const WaitlistSchema = z.object({
   state: z.string().optional(),
   ageRange: z.string().optional(),
   sportsbooks: z.array(z.string()).optional(),
+  otherSportsbook: z.string().optional(),
 });
 
 export async function POST(request: Request) {
   try {
     const json = await request.json();
-    const { email, firstName, lastName, phone, state, ageRange, sportsbooks } = WaitlistSchema.parse(json);
+    const { email, firstName, lastName, phone, state, ageRange, sportsbooks, otherSportsbook } = WaitlistSchema.parse(json);
 
     const existing = await prisma.waitlistUser.findUnique({ where: { email } });
     if (existing) {
@@ -23,7 +24,7 @@ export async function POST(request: Request) {
     }
 
     await prisma.waitlistUser.create({
-      data: { email, firstName, lastName, phone, state, ageRange, sportsbooks },
+      data: { email, firstName, lastName, phone, state, ageRange, sportsbooks, otherSportsbook },
     });
 
     return NextResponse.json({ ok: true }, { status: 201 });

@@ -4,14 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import { JoinWaitlistModal } from "./JoinWaitlistModal";
 
 export function Header() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     // Check if mobile on mount and resize
@@ -71,7 +69,13 @@ export function Header() {
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
               <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms</Link>
               <button 
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => {
+                  // Trigger the modal from Hero section
+                  const heroButton = document.querySelector('#waitlist button');
+                  if (heroButton) {
+                    (heroButton as HTMLButtonElement).click();
+                  }
+                }}
                 className="group inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105"
                 style={{
                   background: "linear-gradient(135deg, #183731 0%, #1f5e4c 100%)"
@@ -136,8 +140,12 @@ export function Header() {
             </nav>
             <button 
               onClick={() => {
-                setIsModalOpen(true);
                 setIsMobileMenuOpen(false);
+                // Trigger the modal from Hero section
+                const heroButton = document.querySelector('#waitlist button');
+                if (heroButton) {
+                  (heroButton as HTMLButtonElement).click();
+                }
               }}
               className="group w-full inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold text-white transition-all hover:scale-105"
               style={{
@@ -150,12 +158,6 @@ export function Header() {
           </div>
         </div>
       )}
-
-      {/* Join Waitlist Modal */}
-      <JoinWaitlistModal 
-        open={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-      />
     </header>
   );
 }
