@@ -16,9 +16,13 @@ export const metadata: Metadata = {
   title: "Regen — Bet as usual. Stack cash automatically.",
   description: "Regen analyzes your sports betting to create automatic savings.",
   icons: {
-    icon: "/images/iso-icon.png",
-    shortcut: "/images/iso-icon.png",
-    apple: "/images/iso-icon.png",
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" }
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "Regen — Bet as usual. Stack cash automatically.",
