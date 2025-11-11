@@ -25,11 +25,7 @@ export default function AboutPage() {
 
             <p className="text-zinc-300 leading-relaxed text-lg mb-6">
               Every bet triggers automatic savings, win or lose. Users connect their sportsbook accounts (FanDuel, DraftKings, etc.), set their rules, and we handle the rest. A winning $100 bet? Save $20. A losing $50 bet? Still save $2. Their money moves from checking to savings automatically. No willpower required.
-            </p>
-
-            <p className="text-zinc-300 leading-relaxed text-lg mb-6">
-              The market collision: Americans staked $150B on sports in 2024 while 60% can&apos;t cover a $1,000 emergency. These bettors are young, digitally native, and lack traditional banking relationships. We&apos;re their first real savings tool, and their gateway into financial services.
-            </p>
+            </p>            
           </div>
         </div>
       </div>

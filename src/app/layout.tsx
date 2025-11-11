@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     ],
     title: "Regen — Bet as usual. Stack cash automatically.",
     description: "Regen analyzes your sports betting to create automatic savings.",
-    url: "https://regen-website-steel.vercel.app",
+    url: "https://regeninvest.co",
     siteName: "Regen",
     locale: "en_US",
     type: "website",
