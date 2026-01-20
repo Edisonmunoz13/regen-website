@@ -52,15 +52,24 @@ export function Header() {
     <header className={`fixed top-0 left-0 right-0 z-50 w-full border-b border-zinc-800/80 bg-black/40 backdrop-blur transition-transform duration-300 ${
       isVisible ? 'translate-y-0' : '-translate-y-full'
     }`}>
-      <div className="container-page flex flex-row h-16 items-center justify-between w-full">
+      <div className="container-page flex flex-row h-16 items-center justify-between w-full relative">
         {/* Logo - Left side */}
-        <Link href="/" className="relative flex items-center gap-1 text-white flex-shrink-0">
-          <Image src="/images/resplandor-logo.png" alt="Regen" width={140} height={40} className="object-contain" />
-          <Image src="/images/regen.png" alt="Regen" width={120} height={40} className="absolute left-28 h-auto object-contain pt-2" />
+        <Link href="/" className="flex items-center gap-1 text-white flex-shrink-0">
+          <Image src="/images/resplandor-logo.png" alt="Regen" width={140} height={40} className="object-contain -ml-4 md:ml-0" />
+        </Link>
+        
+        {/* Logo centered - Mobile only */}
+        <Link href="/" className="absolute left-[52%] -translate-x-1/2 md:hidden">
+          <Image src="/images/regen.png" alt="Regen" width={120} height={40} className="h-auto object-contain pt-2" />
+        </Link>
+        
+        {/* Logo positioned - Desktop */}
+        <Link href="/" className="hidden md:block absolute md:left-[140px] ">
+          <Image src="/images/regen.png" alt="Regen" width={120} height={40} className=" h-auto object-contain pt-2" />
         </Link>
 
         {/* Right side - Desktop Navigation or Mobile Menu */}
-        <div className="flex items-center">
+        <div className="flex items-center -mr-4 md:mr-6">
           {/* Desktop Navigation */}
           {!isMobile && (
             <nav className="flex items-center gap-6 text-base text-zinc-300">
@@ -90,7 +99,7 @@ export function Header() {
           {isMobile && (
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="relative p-2 text-zinc-300 hover:text-white transition-colors duration-200 flex-shrink-0 group"
+              className="relative p-2 text-zinc-300 hover:text-white transition-colors duration-200 flex-shrink-0 group mr-7"
               aria-label="Toggle mobile menu"
             >
               <div className="w-6 h-6 flex flex-col justify-center items-center space-y-1">
