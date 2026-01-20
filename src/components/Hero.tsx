@@ -13,7 +13,7 @@ export function Hero() {
         <h1 className="mx-auto max-w-3xl text-4xl font-extrabold tracking-tight sm:text-6xl">
           <span className="text-white">Bet as usual.</span>
           <br className="hidden sm:block" />
-          <span className="text-emerald-500">Stack cash automatically.</span>
+          <span className="text-[#85EFAC]">Stack cash automatically.</span>
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-balance text-zinc-300">
           Regen links to your sportsbook, and saves you cash with every bet.
@@ -26,7 +26,7 @@ export function Hero() {
           />
           <button
             className="group inline-flex w-full sm:w-[40%] border-none items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105"
-            style={{ background: "linear-gradient(135deg, #183731 0%, #1f5e4c 100%)" }}
+            style={{ background: "linear-gradient(135deg, #183731 0%, #85EFAC 100%)" }}
             onClick={() => setOpen(true)}
           >
             Join Waitlist

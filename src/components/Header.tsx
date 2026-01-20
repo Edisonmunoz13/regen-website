@@ -55,19 +55,18 @@ export function Header() {
       <div className="container-page flex flex-row h-16 items-center justify-between w-full">
         {/* Logo - Left side */}
         <Link href="/" className="flex items-center gap-2 text-white flex-shrink-0">
-          <Image src="/images/iso-icon.png" alt="Regen" width={20} height={20} />
-          <span className="text-lg font-bold" style={{ color: "#14c992" }}>Regen</span>
+          <Image src="/images/icon.png" alt="Regen" width={40} height={40} />
+          <span className="text-2xl font-bold" style={{ color: "#85EFAC" }}>Regen</span>
         </Link>
 
         {/* Right side - Desktop Navigation or Mobile Menu */}
         <div className="flex items-center">
           {/* Desktop Navigation */}
           {!isMobile && (
-            <nav className="flex items-center gap-6 text-sm text-zinc-300">
+            <nav className="flex items-center gap-6 text-base text-zinc-300">
               <span className="text-zinc-500 cursor-not-allowed">Blog</span>
               <Link href="/about" className="hover:text-white transition-colors">About</Link>
-              <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
-              <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms</Link>
+         
               <button 
                 onClick={() => {
                   // Trigger the modal from Hero section
@@ -76,9 +75,9 @@ export function Header() {
                     (heroButton as HTMLButtonElement).click();
                   }
                 }}
-                className="group inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105"
+                className="group inline-flex items-center gap-2 rounded-lg px-4 py-2 text-base font-semibold text-white transition-all hover:scale-105"
                 style={{
-                  background: "linear-gradient(135deg, #183731 0%, #1f5e4c 100%)"
+                  background: "linear-gradient(135deg, #183731 0%, #85EFAC 100%)"
                 }}
               >
                 Join Waitlist
@@ -114,7 +113,7 @@ export function Header() {
       {isMobileMenuOpen && (
         <div className="border-t border-zinc-800/80 bg-black backdrop-blur absolute top-full left-0 z-40 w-[300px]">
           <div className="py-6 px-4 space-y-6">
-            <nav className="flex flex-col gap-4 text-sm text-zinc-300">
+            <nav className="flex flex-col gap-4 text-base text-zinc-300">
               <span className="text-zinc-500 cursor-not-allowed py-2">Blog</span>
               <Link 
                 href="/about" 
@@ -147,7 +146,7 @@ export function Header() {
                   (heroButton as HTMLButtonElement).click();
                 }
               }}
-              className="group w-full inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold text-white transition-all hover:scale-105"
+              className="group w-full inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-base font-semibold text-white transition-all hover:scale-105"
               style={{
                 background: "linear-gradient(135deg, #183731 0%, #1f5e4c 100%)"
               }}
