@@ -77,7 +77,7 @@ export function Header() {
                 }}
                 className="group inline-flex items-center gap-2 rounded-lg px-4 py-2 text-base font-semibold text-white transition-all hover:scale-105"
                 style={{
-                  background: "linear-gradient(135deg, #183731 0%, #85EFAC 100%)"
+                  background: "linear-gradient(135deg, #183731 0%, #85EFAC 140%)"
                 }}
               >
                 Join Waitlist

@@ -8,7 +8,10 @@ export function Footer() {
         <div className="grid grid-cols-1 items-start gap-8 sm:grid-cols-2 lg:grid-cols-6">
           {/* Icon */}
           <div className="flex items-start lg:col-span-1">
-            <Image src="/images/icon.png" alt="Regen" width={100} height={100} />
+            <div className="flex flex-col items-center gap-2">
+            <Image src="/images/icon.png" alt="Regen" width={80} height={80} />
+            <h2 className="text-2xl font-bold" style={{ color: "#85EFAC" }}>Regen</h2>
+            </div>
           </div>
 
           {/* Text (wider) */}
