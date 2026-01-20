@@ -10,7 +10,7 @@ export function Footer() {
           <div className="flex items-start lg:col-span-1">
             <div className="flex flex-col items-center gap-2">
             <Image src="/images/icon.png" alt="Regen" width={80} height={80} />
-            <h2 className="text-2xl font-bold" style={{ color: "#85EFAC" }}>Regen</h2>
+            <Image src="/images/regen.png" alt="Regen" width={120} height={40} className="h-auto object-contain pt-2 pl-2" />
             </div>
           </div>
 

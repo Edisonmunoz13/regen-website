@@ -54,9 +54,9 @@ export function Header() {
     }`}>
       <div className="container-page flex flex-row h-16 items-center justify-between w-full">
         {/* Logo - Left side */}
-        <Link href="/" className="flex items-center gap-2 text-white flex-shrink-0">
-          <Image src="/images/icon.png" alt="Regen" width={40} height={40} />
-          <span className="text-2xl font-bold" style={{ color: "#85EFAC" }}>Regen</span>
+        <Link href="/" className="relative flex items-center gap-1 text-white flex-shrink-0">
+          <Image src="/images/resplandor-logo.png" alt="Regen" width={140} height={40} className="object-contain" />
+          <Image src="/images/regen.png" alt="Regen" width={120} height={40} className="absolute left-28 h-auto object-contain pt-2" />
         </Link>
 
         {/* Right side - Desktop Navigation or Mobile Menu */}
