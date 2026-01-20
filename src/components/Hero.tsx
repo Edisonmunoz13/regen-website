@@ -11,7 +11,7 @@ export function Hero() {
   return (
     <section id="waitlist" className="pb-16 sm:pb-24 text-white">
       <div className="container-page text-center">
-<div className="flex justify-center items-center ml-2">
+<div className="flex justify-center items-center">
         <Image src="/images/resplandor-logo.png" alt="Regen" width={400} height={100} />
         </div>
         <h1 className="mx-auto max-w-3xl text-4xl 
