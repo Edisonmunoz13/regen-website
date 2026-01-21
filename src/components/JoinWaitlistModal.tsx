@@ -149,12 +149,12 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
           ) : (
             <div className="text-center py-8">
               <div className="mb-8">
-                <div className="w-30 h-30 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-30 h-30 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Image 
                     src="/images/icon.png" 
                     alt="Regen" 
-                    width={60} 
-                    height={60} 
+                    width={90} 
+                    height={90} 
                     className=""
                   />
                 </div>
@@ -167,7 +167,7 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
                   type="button"
                   onClick={onClose}
                   className="inline-flex items-center gap-2 rounded-lg px-8 py-3 text-sm font-semibold text-white transition-all hover:scale-105"
-                  style={{ background: "linear-gradient(135deg, #183731 0%, #1f5e4c 100%)" }}
+                  style={{ background: "linear-gradient(135deg, #183731 0%, #85EFAC 70%)" }}
                 >
                   Got it!
                 </button>
