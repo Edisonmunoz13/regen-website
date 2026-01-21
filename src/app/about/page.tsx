@@ -20,11 +20,17 @@ export default function AboutPage() {
             </h1>
 
             <p className="text-zinc-300 leading-relaxed text-lg mb-6">
-              67M Americans bet on sports. We make sure they&apos;re building savings while they do it.
+            67 million Americans bet on sports. We make sure you’re actually building something while you do it.
             </p>
 
             <p className="text-zinc-300 leading-relaxed text-lg mb-6">
-              Every bet triggers automatic savings, win or lose. Users connect their sportsbook accounts (FanDuel, DraftKings, etc.), set their rules, and we handle the rest. A winning $100 bet? Save $20. A losing $50 bet? Still save $2. Their money moves from checking to savings automatically. No willpower required.
+            Every bet triggers automatic savings, win or lose. Link your books, set your rules, and let it run. Hit big? You're saving. Brick a parlay? You’re still saving. Your money moves from checking to savings without you lifting a finger. 
+
+
+            </p>         
+
+            <p className="text-zinc-300 leading-relaxed text-lg mb-6">
+            Zero willpower required.
             </p>            
           </div>
         </div>

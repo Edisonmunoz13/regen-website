@@ -64,7 +64,7 @@ export function Header() {
         </Link>
         
         {/* Logo positioned - Desktop */}
-        <Link href="/" className="hidden md:block absolute md:left-[140px] ">
+        <Link href="/" className="hidden md:block absolute md:left-[150px] ">
           <Image src="/images/regen.png" alt="Regen" width={120} height={40} className=" h-auto object-contain pt-2" />
         </Link>
 
@@ -73,7 +73,14 @@ export function Header() {
           {/* Desktop Navigation */}
           {!isMobile && (
             <nav className="flex items-center gap-6 text-base text-zinc-300">
-              <span className="text-zinc-500 cursor-not-allowed">Blog</span>
+              <Link
+                href="https://regeninvest.substack.com/p/why-we-built-regen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+              >
+                Blog
+              </Link>
               <Link href="/about" className="hover:text-white transition-colors">About</Link>
          
               <button 
@@ -123,7 +130,15 @@ export function Header() {
         <div className="border-t border-zinc-800/80 bg-black backdrop-blur absolute top-full left-0 z-40 w-[300px]">
           <div className="py-6 px-4 space-y-6">
             <nav className="flex flex-col gap-4 text-base text-zinc-300">
-              <span className="text-zinc-500 cursor-not-allowed py-2">Blog</span>
+              <Link
+                href="https://regeninvest.substack.com/p/why-we-built-regen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Blog
+              </Link>
               <Link 
                 href="/about" 
                 className="hover:text-white transition-colors py-2"

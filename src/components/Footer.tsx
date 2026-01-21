@@ -33,7 +33,7 @@ export function Footer() {
           {/* Contact */}
           <div className="lg:col-span-1">
             <h3 className="text-white font-semibold mb-4 text-sm sm:text-base">Contact</h3>
-            <p className="text-xs sm:text-sm text-zinc-400">support@regeninvest.co</p>
+            <p className="text-xs sm:text-sm text-zinc-400">hello@regeninvest.co</p>
           </div>
         </div>
 

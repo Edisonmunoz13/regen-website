@@ -158,8 +158,8 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
                     className=""
                   />
                 </div>
-                <h2 className="text-2xl font-bold text-zinc-800 mb-3">Successfully signed up!</h2>
-                <p className="text-zinc-600 text-lg">You should be receiving an email soon with further instructions.</p>
+                <h2 className="text-2xl font-bold text-zinc-800 mb-3">LET&apos;S GOOO 🔥 You&apos;re on the waitlist!</h2>
+                <p className="text-zinc-600 text-lg">Keep an eye on your inbox — big things incoming.</p>
               </div>
               
               <div className="mt-8">
