@@ -64,62 +64,63 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
     });
   };
 
-  const stateOptions = useMemo(() => states.map(s => (<option key={s} value={s}>{s}</option>)), []);
-  const ageOptions = useMemo(() => ageRanges.map(a => (<option key={a} value={a}>{a}</option>)), []);
+  const stateOptions = useMemo(() => states.map(s => (<option key={s} value={s} className="bg-zinc-900 text-white">{s}</option>)), []);
+  const ageOptions = useMemo(() => ageRanges.map(a => (<option key={a} value={a} className="bg-zinc-900 text-white">{a}</option>)), []);
   
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-4">
       <div 
         className="absolute inset-0 bg-black/50" 
         onClick={onClose}
       />
-      <div className="relative w-full max-w-lg rounded-xl bg-white p-4 sm:p-6 shadow-2xl max-h-[90vh] overflow-y-auto" translate="no" lang="en">
+      <div className="relative w-full max-w-lg rounded-xl bg-black border border-zinc-800 p-4 sm:p-6 shadow-2xl max-h-[95vh] overflow-y-auto" translate="no" lang="en">
         <button
           onClick={onClose}
-          className="absolute left-4 top-4 inline-flex items-center justify-center rounded-full p-2 text-zinc-600 hover:bg-zinc-100"
+          className="absolute left-4 top-4 inline-flex items-center justify-center rounded-full p-2 text-zinc-300 hover:bg-zinc-800"
         >
           <ArrowLeft className="h-5 w-5" />
         </button>
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 inline-flex items-center justify-center rounded-full p-2 text-zinc-600 hover:bg-zinc-100"
+          className="absolute right-4 top-4 inline-flex items-center justify-center rounded-full p-2 text-zinc-300 hover:bg-zinc-800"
         >
           <X className="h-5 w-5" />
         </button>
 
         {!success ? (
-          <div className="grid gap-4 text-zinc-800">
-            <h2 className="text-xl font-semibold">Join Regen waitlist</h2>
+          <div className="grid gap-4 text-white">
+            <h2 className="text-xl font-semibold text-[#85EFAC]">Join Regen waitlist</h2>
               <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4">
-                <input className="rounded-md border border-zinc-300 px-3 py-2" placeholder="Email" {...register("email")} />
-                {errors.email && <p className="text-sm text-red-600">Valid email required</p>}
+                <input className="rounded-md border border-zinc-700 bg-zinc-900 text-white placeholder:text-zinc-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Email" {...register("email")} />
+                {errors.email && <p className="text-sm text-red-400">Valid email required</p>}
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                  <input className="rounded-md border border-zinc-300 px-3 py-2" placeholder="First name" {...register("firstName")} />
-                  <input className="rounded-md border border-zinc-300 px-3 py-2" placeholder="Last name" {...register("lastName")} />
+                  <input className="rounded-md border border-zinc-700 bg-zinc-900 text-white placeholder:text-zinc-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="First name" {...register("firstName")} />
+                  <input className="rounded-md border border-zinc-700 bg-zinc-900 text-white placeholder:text-zinc-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Last name" {...register("lastName")} />
                 </div>
-                <input className="rounded-md border border-zinc-300 px-3 py-2" placeholder="Phone" {...register("phone")} />
+                <input className="rounded-md border border-zinc-700 bg-zinc-900 text-white placeholder:text-zinc-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Phone" {...register("phone")} />
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                  <select className="rounded-md border border-zinc-300 px-3 py-2" defaultValue="" {...register("state")}>
-                    <option value="" disabled>Select your state</option>
+                  <select className="rounded-md border border-zinc-700 bg-zinc-900 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" defaultValue="" {...register("state")}>
+                    <option value="" disabled className="bg-zinc-900">Select your state</option>
                     {stateOptions}
                   </select>
-                  <select className="rounded-md border border-zinc-300 px-3 py-2" defaultValue="" {...register("ageRange")}>
-                    <option value="" disabled>Select your age range</option>
+                  <select className="rounded-md border border-zinc-700 bg-zinc-900 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" defaultValue="" {...register("ageRange")}>
+                    <option value="" disabled className="bg-zinc-900">Select your age range</option>
                     {ageOptions}
                   </select>
                 </div>
 
                 <div>
-                  <p className="mb-2 text-sm font-medium text-zinc-700">What sportsbooks do you use? (Select all that apply)</p>
+                  <p className="mb-2 text-sm font-medium text-zinc-300">What sportsbooks do you use? (Select all that apply)</p>
                   <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {sportsbookOptions.map((name) => (
-                      <label key={name} className="flex items-center gap-2 text-sm text-zinc-700">
+                      <label key={name} className="flex items-center gap-2 text-sm text-zinc-300">
                         <input
                           type="checkbox"
                           checked={selectedSportsbooks.includes(name)}
                           onChange={() => onToggleSportsbook(name)}
+                          className="accent-emerald-500"
                         />
                         <span>{name}</span>
                       </label>
@@ -128,7 +129,7 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
                   {showOtherField && (
                     <div className="mt-3">
                       <input 
-                        className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm" 
+                        className="w-full rounded-md border border-zinc-700 bg-zinc-900 text-white placeholder:text-zinc-500 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" 
                         placeholder="Please specify other sportsbook" 
                         {...register("otherSportsbook")} 
                       />
@@ -139,7 +140,7 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
                 <button
                   disabled={isPending}
                   className="group mt-2 inline-flex items-center border-none justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105"
-                  style={{ background: "linear-gradient(135deg, #183731 0%, #1f5e4c 100%)" }}
+                  style={{ background: "linear-gradient(135deg, #183731 0%, #85EFAC 140%)" }}
                 >
                   {isPending ? "Saving..." : "Complete Signup"}
                   {!isPending && <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />}
@@ -158,8 +159,8 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
                     className=""
                   />
                 </div>
-                <h2 className="text-2xl font-bold text-zinc-800 mb-3">LET&apos;S GOOO 🔥 You&apos;re on the waitlist!</h2>
-                <p className="text-zinc-600 text-lg">Keep an eye on your inbox — big things incoming.</p>
+                <h2 className="text-2xl font-bold text-white mb-3">LET&apos;S GOOO 🔥 You&apos;re on the waitlist!</h2>
+                <p className="text-zinc-300 text-lg">Keep an eye on your inbox — big things incoming.</p>
               </div>
               
               <div className="mt-8">

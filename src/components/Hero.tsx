@@ -17,7 +17,7 @@ export function Hero() {
         <h1 className="mx-auto max-w-3xl text-4xl 
         font-extrabold tracking-tight sm:text-6xl">
           <span className="text-white">Bet as usual.</span>
-          <br className="hidden sm:block" />
+          <br />
           <span className="text-[#85EFAC]"> Stack cash automatically.</span>
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-balance text-zinc-300">
