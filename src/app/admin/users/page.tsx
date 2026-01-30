@@ -71,7 +71,7 @@ export default function AdminUsers() {
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-3xl font-bold text-white mb-2">Waitlist Users</h1>
-            <p className="text-zinc-400">Users registered since January 30, 2024</p>
+            <p className="text-zinc-400">All registered users</p>
           </div>
           <button
             onClick={handleLogout}

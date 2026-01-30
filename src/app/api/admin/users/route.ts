@@ -11,15 +11,8 @@ export async function GET(request: Request) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    // Get users from January 30, 2024 onwards
-    const startDate = new Date("2024-01-30T00:00:00.000Z");
-
+    // Get all users
     const users = await prisma.waitlistUser.findMany({
-      where: {
-        createdAt: {
-          gte: startDate,
-        },
-      },
       orderBy: {
         createdAt: "desc",
       },
