@@ -25,10 +25,11 @@ export function Hero() {
         </p>
         <div className="mx-auto mt-8 flex flex-col items-center gap-4 sm:flex-row sm:max-w-lg sm:gap-2">
           <input
-            className="w-full rounded-md bg-white px-3 py-2 text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full rounded-md bg-white px-3 py-2 text-base text-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             placeholder="Enter your email"
             onClick={() => setOpen(true)}
             readOnly
+            style={{ fontSize: '16px' }}
           />
           <button
             className="group inline-flex w-full sm:w-[40%] border-none items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105"
