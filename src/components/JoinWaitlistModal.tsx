@@ -75,7 +75,7 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
         className="absolute inset-0 bg-black/50" 
         onClick={onClose}
       />
-      <div className="relative w-full max-w-lg rounded-xl bg-black border border-zinc-800 p-4 sm:p-6 shadow-2xl max-h-[95vh] overflow-y-auto" translate="no" lang="en">
+      <div className="relative w-full max-w-[360px] sm:max-w-lg rounded-xl bg-black border border-zinc-800 p-4 sm:p-6 shadow-2xl max-h-[95vh] overflow-y-auto" translate="no" lang="en">
         <button
           onClick={onClose}
           className="absolute left-4 top-4 inline-flex items-center justify-center rounded-full p-2 text-zinc-300 hover:bg-zinc-800"
