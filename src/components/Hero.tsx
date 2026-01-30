@@ -27,10 +27,11 @@ export function Hero() {
           <input
             className="w-full rounded-md bg-white px-3 py-2 text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             placeholder="Enter your email"
-            onFocus={() => setOpen(true)}
+            onClick={() => setOpen(true)}
+            readOnly
           />
           <button
-            className="group inline-flex w-full sm:w-[40%] border-none items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105"
+            className="group inline-flex w-full sm:w-auto border-none items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105"
             style={{ background: "linear-gradient(135deg, #183731 0%, #85EFAC 140%)" }}
             onClick={() => setOpen(true)}
           >

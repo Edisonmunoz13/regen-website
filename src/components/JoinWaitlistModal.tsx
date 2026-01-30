@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
-import { useMemo, useState, useTransition } from "react";
+import { useMemo, useState, useTransition, useEffect } from "react";
 import { ArrowLeft, ArrowRight, X } from "lucide-react";
 
 const states = [
@@ -67,15 +67,67 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
   const stateOptions = useMemo(() => states.map(s => (<option key={s} value={s} className="bg-zinc-900 text-white">{s}</option>)), []);
   const ageOptions = useMemo(() => ageRanges.map(a => (<option key={a} value={a} className="bg-zinc-900 text-white">{a}</option>)), []);
   
+  useEffect(() => {
+    if (open) {
+      // Guardar el ancho actual del body antes de bloquear scroll
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      const bodyStyle = document.body.style;
+      const htmlStyle = document.documentElement.style;
+      
+      // Prevenir scroll del body cuando el modal está abierto
+      bodyStyle.overflow = 'hidden';
+      bodyStyle.overflowX = 'hidden';
+      bodyStyle.overflowY = 'hidden';
+      htmlStyle.overflow = 'hidden';
+      htmlStyle.overflowX = 'hidden';
+      htmlStyle.overflowY = 'hidden';
+      
+      // Prevenir que el body se expanda horizontalmente
+      bodyStyle.position = 'fixed';
+      bodyStyle.width = '100%';
+      bodyStyle.paddingRight = `${scrollbarWidth}px`;
+    } else {
+      // Restaurar scroll cuando el modal se cierra
+      const bodyStyle = document.body.style;
+      const htmlStyle = document.documentElement.style;
+      
+      bodyStyle.overflow = '';
+      bodyStyle.overflowX = '';
+      bodyStyle.overflowY = '';
+      bodyStyle.position = '';
+      bodyStyle.width = '';
+      bodyStyle.paddingRight = '';
+      htmlStyle.overflow = '';
+      htmlStyle.overflowX = '';
+      htmlStyle.overflowY = '';
+    }
+    
+    return () => {
+      // Cleanup: restaurar scroll al desmontar
+      const bodyStyle = document.body.style;
+      const htmlStyle = document.documentElement.style;
+      
+      bodyStyle.overflow = '';
+      bodyStyle.overflowX = '';
+      bodyStyle.overflowY = '';
+      bodyStyle.position = '';
+      bodyStyle.width = '';
+      bodyStyle.paddingRight = '';
+      htmlStyle.overflow = '';
+      htmlStyle.overflowX = '';
+      htmlStyle.overflowY = '';
+    };
+  }, [open]);
+  
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center px-4 py-8 overflow-hidden">
       <div 
         className="absolute inset-0 bg-black/50" 
         onClick={onClose}
       />
-      <div className="relative w-full max-w-md mx-auto rounded-xl bg-black border border-zinc-800 p-4 sm:p-6 shadow-2xl max-h-[90vh] overflow-y-auto" translate="no" lang="en">
+      <div className="relative w-full max-w-[min(360px,calc(100vw-2rem))] rounded-xl bg-black border border-zinc-800 p-4 sm:p-6 shadow-2xl max-h-[calc(100vh-4rem)] overflow-y-auto overflow-x-hidden" translate="no" lang="en">
         <button
           onClick={onClose}
           className="absolute left-4 top-4 inline-flex items-center justify-center rounded-full p-2 text-zinc-300 hover:bg-zinc-800"
@@ -90,39 +142,39 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
         </button>
 
         {!success ? (
-          <div className="grid gap-4 text-white">
-            <h2 className="text-xl font-semibold text-[#85EFAC]">Join Regen waitlist</h2>
-              <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4">
-                <input className="rounded-md border border-zinc-700 bg-zinc-900 text-white placeholder:text-zinc-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Email" {...register("email")} />
+          <div className="grid gap-4 text-white min-w-0 w-full">
+            <h2 className="text-xl font-semibold text-[#85EFAC] break-words">Join Regen waitlist</h2>
+              <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4 min-w-0 w-full">
+                <input className="w-full rounded-md border border-zinc-700 bg-zinc-900 text-white placeholder:text-zinc-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Email" {...register("email")} />
                 {errors.email && <p className="text-sm text-red-400">Valid email required</p>}
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                  <input className="rounded-md border border-zinc-700 bg-zinc-900 text-white placeholder:text-zinc-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="First name" {...register("firstName")} />
-                  <input className="rounded-md border border-zinc-700 bg-zinc-900 text-white placeholder:text-zinc-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Last name" {...register("lastName")} />
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 min-w-0 w-full">
+                  <input className="w-full min-w-0 rounded-md border border-zinc-700 bg-zinc-900 text-white placeholder:text-zinc-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="First name" {...register("firstName")} />
+                  <input className="w-full min-w-0 rounded-md border border-zinc-700 bg-zinc-900 text-white placeholder:text-zinc-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Last name" {...register("lastName")} />
                 </div>
-                <input className="rounded-md border border-zinc-700 bg-zinc-900 text-white placeholder:text-zinc-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Phone" {...register("phone")} />
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                  <select className="rounded-md border border-zinc-700 bg-zinc-900 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" defaultValue="" {...register("state")}>
+                <input className="w-full rounded-md border border-zinc-700 bg-zinc-900 text-white placeholder:text-zinc-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Phone" {...register("phone")} />
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 min-w-0 w-full">
+                  <select className="w-full min-w-0 rounded-md border border-zinc-700 bg-zinc-900 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" defaultValue="" {...register("state")}>
                     <option value="" disabled className="bg-zinc-900">Select your state</option>
                     {stateOptions}
                   </select>
-                  <select className="rounded-md border border-zinc-700 bg-zinc-900 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" defaultValue="" {...register("ageRange")}>
+                  <select className="w-full min-w-0 rounded-md border border-zinc-700 bg-zinc-900 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" defaultValue="" {...register("ageRange")}>
                     <option value="" disabled className="bg-zinc-900">Select your age range</option>
                     {ageOptions}
                   </select>
                 </div>
 
-                <div>
-                  <p className="mb-2 text-sm font-medium text-zinc-300">What sportsbooks do you use? (Select all that apply)</p>
-                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                <div className="min-w-0">
+                  <p className="mb-2 text-sm font-medium text-zinc-300 break-words">What sportsbooks do you use? (Select all that apply)</p>
+                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 min-w-0">
                     {sportsbookOptions.map((name) => (
-                      <label key={name} className="flex items-center gap-2 text-sm text-zinc-300">
+                      <label key={name} className="flex items-center gap-2 text-sm text-zinc-300 min-w-0 w-full">
                         <input
                           type="checkbox"
                           checked={selectedSportsbooks.includes(name)}
                           onChange={() => onToggleSportsbook(name)}
-                          className="accent-emerald-500"
+                          className="accent-emerald-500 flex-shrink-0"
                         />
-                        <span>{name}</span>
+                        <span className="min-w-0 break-words">{name}</span>
                       </label>
                     ))}
                   </div>
