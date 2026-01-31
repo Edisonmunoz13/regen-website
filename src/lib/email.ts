@@ -53,8 +53,8 @@ export async function sendWelcomeEmail(email: string, firstName?: string | null)
                       <td style="color: #e5e7eb; font-size: 16px; line-height: 1.6;">
                         <p style="margin: 0 0 20px 0;">Hey ${name},</p>
                         <p style="margin: 0 0 20px 0;">You're officially on the Regen waitlist! 🎉</p>
-                        <p style="margin: 0 0 20px 0;">We're building something special that will help you stack cash automatically with every bet. Keep an eye on your inbox — big things incoming.</p>
-                        <p style="margin: 0 0 30px 0;">Bet as usual. Stack cash automatically.</p>
+                        <p style="margin: 0 0 20px 0;">We're building something special that will help you stack cash automatically with every bet.</p>
+                        <p style="margin: 0 0 30px 0;">Keep an eye on your inbox, big things incoming.</p>
                       </td>
                     </tr>
                     <tr>
