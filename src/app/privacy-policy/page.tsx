@@ -104,7 +104,7 @@ export default function PrivacyPolicyPage() {
                 <li>Opt out of certain data uses where permitted by law</li>
               </ul>
               <p className="text-zinc-300 leading-relaxed">
-                To exercise your rights, email support@regeninvest.co with the subject line: Privacy Rights Request. 
+                To exercise your rights, email hello@regeninvest.co with the subject line: Privacy Rights Request. 
                 We may require identity verification.
               </p>
             </section>
@@ -160,8 +160,8 @@ export default function PrivacyPolicyPage() {
             <section className="mb-8 p-6 rounded-xl border border-emerald-900/40 bg-black/40">
               <h2 className="text-2xl font-semibold text-white mb-4">Contact Us</h2>
               <p className="text-zinc-300 mb-2">Regen Technology Inc.</p>
-              <a href="mailto:support@regeninvest.co" className="text-emerald-400 hover:text-emerald-300 transition-colors block mb-2">
-                support@regeninvest.co
+              <a href="mailto:hello@regeninvest.co" className="text-emerald-400 hover:text-emerald-300 transition-colors block mb-2">
+                hello@regeninvest.co
               </a>
               <a href="https://regeninvest.co" className="text-emerald-400 hover:text-emerald-300 transition-colors block mb-4">
                 regeninvest.co

@@ -76,7 +76,7 @@ export default function TermsOfServicePage() {
               <p className="text-zinc-300 leading-relaxed">
                 You consent to receive all communications, agreements, and disclosures electronically, 
                 including this Terms of Service agreement, privacy policies, account statements, and 
-                other notices. You may withdraw consent by contacting us at support@regeninvest.co, 
+                other notices. You may withdraw consent by contacting us at hello@regeninvest.co, 
                 but this may limit your ability to use the Services.
               </p>
             </section>
@@ -191,7 +191,7 @@ export default function TermsOfServicePage() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-white mb-4">11. Termination</h2>
               <p className="text-zinc-300 leading-relaxed mb-4">
-                You may close your account at any time by contacting support@regeninvest.co.
+                You may close your account at any time by contacting hello@regeninvest.co.
               </p>
               <p className="text-zinc-300 leading-relaxed mb-4">We may suspend or close your account if:</p>
               <ul className="list-disc list-inside text-zinc-300 space-y-2 mb-4">
@@ -289,8 +289,8 @@ export default function TermsOfServicePage() {
             <section className="mb-8 p-6 rounded-xl border border-emerald-900/40 bg-black/40">
               <h2 className="text-2xl font-semibold text-white mb-4">18. Contact Us</h2>
               <p className="text-zinc-300 mb-2">Regen Technology Inc.</p>
-              <a href="mailto:support@regeninvest.co" className="text-emerald-400 hover:text-emerald-300 transition-colors block mb-2">
-                Email: support@regeninvest.co
+              <a href="mailto:hello@regeninvest.co" className="text-emerald-400 hover:text-emerald-300 transition-colors block mb-2">
+                Email: hello@regeninvest.co
               </a>
               <a href="https://regeninvest.co" className="text-emerald-400 hover:text-emerald-300 transition-colors block mb-4">
                 Website: regeninvest.co
