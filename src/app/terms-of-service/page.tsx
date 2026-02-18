@@ -82,6 +82,57 @@ export default function TermsOfServicePage() {
             </section>
 
             <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-white mb-4">5.1 SMS Messaging Program – REGEN Verification Codes</h2>
+              <p className="text-zinc-300 leading-relaxed mb-4">
+                By providing your mobile phone number, you authorize Regen to send you SMS text messages 
+                containing one-time verification codes ("REGEN Verification Codes") for account registration, 
+                login authentication, and phone number verification.
+              </p>
+              <p className="text-zinc-300 leading-relaxed mb-4">
+                <span className="font-semibold text-emerald-400">Program Description:</span> REGEN Verification 
+                Codes are used only to help you access and secure your account. Messages will not contain 
+                marketing or promotional content.
+              </p>
+              <p className="text-zinc-300 leading-relaxed mb-4">
+                <span className="font-semibold text-emerald-400">Message Frequency:</span> Messages are sent 
+                only when you request a verification code (for example, when you sign up, log in, or verify 
+                your phone number). Message frequency varies based on your usage.
+              </p>
+              <p className="text-zinc-300 leading-relaxed mb-4">
+                <span className="font-semibold text-emerald-400">Fees:</span> Message and data rates may apply, 
+                depending on your mobile carrier plan.
+              </p>
+              <p className="text-zinc-300 leading-relaxed mb-4">
+                <span className="font-semibold text-emerald-400">Opt-Out:</span> You can opt out of receiving 
+                SMS messages at any time by replying <span className="font-semibold">STOP</span> to any SMS we 
+                send you. You may also contact us at{" "}
+                <a href="mailto:hello@regeninvest.co" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                  hello@regeninvest.co
+                </a>{" "}
+                to request that we stop sending SMS messages.
+              </p>
+              <p className="text-zinc-300 leading-relaxed mb-4">
+                <span className="font-semibold text-emerald-400">Help:</span> For help with the SMS program, 
+                reply <span className="font-semibold">HELP</span> to any SMS or contact us at{" "}
+                <a href="mailto:hello@regeninvest.co" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                  hello@regeninvest.co
+                </a>.
+              </p>
+              <p className="text-zinc-300 leading-relaxed mb-4">
+                <span className="font-semibold text-emerald-400">Privacy:</span> For information on how we 
+                collect, use, and protect your information, please review our{" "}
+                <Link href="/privacy-policy" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                  Privacy Policy
+                </Link>. All text messaging originator opt-in data and consent will not be shared with any 
+                third parties.
+              </p>
+              <p className="text-zinc-300 leading-relaxed">
+                <span className="font-semibold text-emerald-400">Carrier Disclaimer:</span> Carriers are not 
+                liable for delayed or undelivered messages.
+              </p>
+            </section>
+
+            <section className="mb-8">
               <h2 className="text-2xl font-semibold text-white mb-4">6. How Savings Work</h2>
               <p className="text-zinc-300 leading-relaxed mb-4">
                 You authorize Regen to access your betting data (via SharpSports) to calculate savings amounts

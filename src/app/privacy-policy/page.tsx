@@ -95,6 +95,29 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-white mb-4">SMS Messaging &amp; Consent</h2>
+              <p className="text-zinc-300 leading-relaxed mb-4">
+                When you provide your mobile phone number to use our Services, you may choose to receive SMS text messages from Regen containing one-time verification codes (OTP) for account registration, login authentication, and phone number verification.
+              </p>
+              <p className="text-zinc-300 leading-relaxed mb-4">
+                We collect your phone number and your consent to receive these messages when you submit your number in our app or on our website and proceed with account registration or login.
+              </p>
+              <p className="text-zinc-300 leading-relaxed mb-4">
+                We use your phone number and SMS consent solely to send you the verification codes you request and other security-related messages. We do not use your SMS opt-in data for marketing purposes.
+              </p>
+              <p className="text-zinc-300 leading-relaxed mb-4 font-semibold">
+                All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties. Your SMS opt-in data and consent are used only to provide you with authentication and account security services.
+              </p>
+              <p className="text-zinc-300 leading-relaxed">
+                You can opt out of receiving SMS messages at any time by replying STOP to any message or by contacting us at{" "}
+                <a href="mailto:hello@regeninvest.co" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                  hello@regeninvest.co
+                </a>
+                .
+              </p>
+            </section>
+
+            <section className="mb-8">
               <h2 className="text-2xl font-semibold text-white mb-4">Your Rights</h2>
               <p className="text-zinc-300 leading-relaxed mb-4">Depending on where you live, you may have rights to:</p>
               <ul className="list-disc list-inside text-zinc-300 space-y-2 mb-4">
