@@ -87,9 +87,10 @@ export function Header() {
                 href="https://apps.apple.com/us/app/regen-invest/id6758348303"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-lg px-4 py-2 text-base font-semibold text-white transition-all hover:scale-105"
+                className="group inline-flex items-center gap-2 rounded-lg px-4 py-2 text-base font-semibold text-white transition-all hover:scale-105 border-2"
                 style={{
-                  background: "linear-gradient(135deg, #183731 0%, #85EFAC 140%)"
+                  background: "linear-gradient(135deg, #183731 0%, #85EFAC 140%)",
+                  borderColor: "#85EFAC"
                 }}
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
@@ -164,9 +165,10 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="group w-full inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-base font-semibold text-white transition-all hover:scale-105"
+              className="group w-full inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-base font-semibold text-white transition-all hover:scale-105 border-2"
               style={{
-                background: "linear-gradient(135deg, #183731 0%, #1f5e4c 100%)"
+                background: "linear-gradient(135deg, #183731 0%, #1f5e4c 100%)",
+                borderColor: "#85EFAC"
               }}
             >
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
