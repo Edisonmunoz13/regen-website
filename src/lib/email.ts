@@ -14,7 +14,6 @@ export async function sendWelcomeEmail(email: string, firstName?: string | null)
   console.log(`📬 sendWelcomeEmail called for: ${email}`);
   console.log(`🔐 SMTP_USER exists: ${!!process.env.SMTP_USER}`);
   console.log(`🔐 SMTP_PASSWORD exists: ${!!process.env.SMTP_PASSWORD}`);
-  console.log(`📧 EMAIL_FROM: ${process.env.EMAIL_FROM || "Regen <horacio@regeninvest.co>"}`);
   
   if (!process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
     console.warn("⚠️ SMTP credentials not set, skipping email");
@@ -23,13 +22,18 @@ export async function sendWelcomeEmail(email: string, firstName?: string | null)
     return { success: false, error: "SMTP credentials not configured" };
   }
 
+  if (!process.env.EMAIL_FROM) {
+    console.error("❌ EMAIL_FROM not set in environment variables");
+    return { success: false, error: "EMAIL_FROM not configured" };
+  }
+
   const name = firstName || "there";
 
   try {
     console.log(`📧 Attempting to send welcome email to: ${email}`);
     
     const info = await transporter.sendMail({
-      from: process.env.EMAIL_FROM || "Regen <horacio@regeninvest.co>",
+      from: process.env.EMAIL_FROM,
       to: email,
       subject: "Welcome to Regen — You're on the waitlist! 🔥",
       html: `

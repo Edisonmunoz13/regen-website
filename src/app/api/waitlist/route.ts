@@ -41,7 +41,7 @@ export async function POST(request: Request) {
     console.log(`🔍 SMTP Config Check:`);
     console.log(`   SMTP_USER: ${process.env.SMTP_USER ? '✅ SET' : '❌ NOT SET'}`);
     console.log(`   SMTP_PASSWORD: ${process.env.SMTP_PASSWORD ? '✅ SET' : '❌ NOT SET'}`);
-    console.log(`   EMAIL_FROM: ${process.env.EMAIL_FROM || 'Using default'}`);
+    console.log(`   EMAIL_FROM: ${process.env.EMAIL_FROM ? '✅ SET' : '❌ NOT SET'}`);
 
     // Send welcome email - always send, even if user already exists
     console.log(`📧 Starting email send process for: ${email}`);
