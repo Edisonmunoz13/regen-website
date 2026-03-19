@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://regeninvest.co"),
   title: "Regen — Bet as usual. Stack cash automatically.",
   description: "Regen analyzes your sports betting to create automatic savings.",
   icons: {
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     images: [
-      { url: "/images/resplandor-logo.png", width: 1655, height: 1634, alt: "Resplandor" }
+      { url: "/images/resplandor-logo.png?v=20260319", width: 1655, height: 1634, alt: "Resplandor" }
     ],
     title: "Regen — Bet as usual. Stack cash automatically.",
     description: "Regen analyzes your sports betting to create automatic savings.",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     title: "Regen — Bet as usual. Stack cash automatically.",
     description: "Regen analyzes your sports betting to create automatic savings.",
     images: [
-      { url: "/images/resplandor-logo.png", width: 1655, height: 1634, alt: "Resplandor" }
+      { url: "/images/resplandor-logo.png?v=20260319", width: 1655, height: 1634, alt: "Resplandor" }
     ],
   },
   manifest: "/manifest.json",
