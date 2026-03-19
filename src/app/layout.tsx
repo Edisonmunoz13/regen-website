@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     images: [
-      { url: "/images/icon.png", width: 200, height: 200, alt: "Regen" }
+      { url: "/images/resplandor-logo.png", width: 1655, height: 1634, alt: "Resplandor" }
     ],
     title: "Regen — Bet as usual. Stack cash automatically.",
     description: "Regen analyzes your sports betting to create automatic savings.",
@@ -39,6 +39,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Regen — Bet as usual. Stack cash automatically.",
     description: "Regen analyzes your sports betting to create automatic savings.",
+    images: [
+      { url: "/images/resplandor-logo.png", width: 1655, height: 1634, alt: "Resplandor" }
+    ],
   },
   manifest: "/manifest.json",
 };
