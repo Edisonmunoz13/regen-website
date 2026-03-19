@@ -26,9 +26,6 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    images: [
-      { url: "/images/resplandor-logo.png?v=20260319", width: 1655, height: 1634, alt: "Resplandor" }
-    ],
     title: "Regen — Bet as usual. Stack cash automatically.",
     description: "Regen analyzes your sports betting to create automatic savings.",
     url: "https://regeninvest.co",
@@ -40,9 +37,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Regen — Bet as usual. Stack cash automatically.",
     description: "Regen analyzes your sports betting to create automatic savings.",
-    images: [
-      { url: "/images/resplandor-logo.png?v=20260319", width: 1655, height: 1634, alt: "Resplandor" }
-    ],
   },
   manifest: "/manifest.json",
 };
@@ -60,6 +54,26 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#14c992" />
+
+        {/* LinkedIn/Social scrapers leen estos tags directamente del <head>. */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://regeninvest.co" />
+        <meta
+          property="og:image"
+          content="https://regeninvest.co/images/resplandor-logo.png?v=20260319"
+        />
+        <meta
+          property="og:image:secure_url"
+          content="https://regeninvest.co/images/resplandor-logo.png?v=20260319"
+        />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1655" />
+        <meta property="og:image:height" content="1634" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:image"
+          content="https://regeninvest.co/images/resplandor-logo.png?v=20260319"
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
