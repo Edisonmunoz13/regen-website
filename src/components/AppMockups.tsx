@@ -67,7 +67,6 @@ export function AppMockups() {
               </div>
             </div>
           </div>
-          <p className="mt-6 text-sm text-zinc-500">Coming soon to iOS and Android</p>
         </div>
       </div>
     </section>
