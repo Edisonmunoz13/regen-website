@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { AppleLogo } from "./AppleLogo";
+import { DownloadIosButton } from "./DownloadIosButton";
 import { useEffect, useRef, useState } from "react";
 
 type NavLink = {
@@ -188,16 +189,13 @@ export function Header() {
               </a>
             );
           })}
-          <a
-            href="https://apps.apple.com/us/app/regen-invest/id6758348303"
-            target="_blank"
-            rel="noopener noreferrer"
+          <DownloadIosButton
             className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition-all hover:scale-105"
             style={{ backgroundColor: "var(--regen-green)" }}
           >
             <AppleLogo className="h-4 w-4" />
             Download for iOS
-          </a>
+          </DownloadIosButton>
         </div>
 
         {/* Mobile menu button */}
@@ -260,17 +258,14 @@ export function Header() {
                 </a>
               );
             })}
-            <a
-              href="https://apps.apple.com/us/app/regen-invest/id6758348303"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
+            <DownloadIosButton
               className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white"
               style={{ backgroundColor: "var(--regen-green)" }}
+              onAfterClick={() => setOpen(false)}
             >
               <AppleLogo className="h-4 w-4" />
               Download for iOS
-            </a>
+            </DownloadIosButton>
           </div>
         </div>
       )}

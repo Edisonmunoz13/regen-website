@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { AppleLogo } from "./AppleLogo";
+import { DownloadIosButton } from "./DownloadIosButton";
 
 export function FinalCTA() {
   return (
@@ -14,15 +14,12 @@ export function FinalCTA() {
         <p className="mx-auto mt-6 max-w-xl text-lg opacity-80 md:text-xl">
           Link your book. Set your rule. Stack cash.
         </p>
-        <Link
-          href="https://apps.apple.com/us/app/regen-invest/id6758348303"
-          target="_blank"
-          rel="noopener noreferrer"
+        <DownloadIosButton
           className="mt-10 inline-flex items-center gap-2 rounded-full bg-black px-8 py-4 text-base font-semibold text-white transition-transform hover:scale-105"
         >
           <AppleLogo className="h-5 w-5" />
           Download for iOS
-        </Link>
+        </DownloadIosButton>
       </div>
     </section>
   );

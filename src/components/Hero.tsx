@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { AppleLogo } from "./AppleLogo";
+import { DownloadIosButton } from "./DownloadIosButton";
 
 export function Hero() {
   return (
@@ -20,16 +21,13 @@ export function Hero() {
             Regen links to your sportsbook, and saves you cash with every bet.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="https://apps.apple.com/us/app/regen-invest/id6758348303"
-              target="_blank"
-              rel="noopener noreferrer"
+            <DownloadIosButton
               className="inline-flex items-center gap-2 rounded-full px-7 py-4 text-base font-semibold text-white transition-all hover:scale-105"
               style={{ backgroundColor: "var(--regen-green)" }}
             >
               <AppleLogo className="h-5 w-5" />
               Download for iOS
-            </Link>
+            </DownloadIosButton>
             <Link
               href="/about#how"
               className="inline-flex items-center gap-2 rounded-full border border-zinc-800/80 bg-zinc-900/50 px-7 py-4 text-base font-semibold text-white transition-all hover:bg-zinc-900"
