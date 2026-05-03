@@ -57,7 +57,7 @@ const team: Member[] = [
     title: "Founding Engineer",
     bio: "Natural-born competitor and sports enthusiast. As a chad full stack engineer, determined to build the best product to help bettors win more.",
     initials: "HM",
-    image: "/images/horacio.JPG",
+    image: "/images/horacio.jpg",
     linkedin: "https://www.linkedin.com/in/horacedev/",
   },
 ];
