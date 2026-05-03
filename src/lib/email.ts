@@ -89,3 +89,71 @@ export async function sendWelcomeEmail(email: string, firstName?: string | null)
     return { success: false, error: error instanceof Error ? error.message : "Unknown error" };
   }
 }
+
+const APP_STORE_URL = "https://apps.apple.com/us/app/regen-invest/id6758348303";
+
+export async function sendAppLinkEmail(email: string) {
+  if (!process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
+    return { success: false, error: "SMTP credentials not configured" };
+  }
+  if (!process.env.EMAIL_FROM) {
+    return { success: false, error: "EMAIL_FROM not configured" };
+  }
+
+  try {
+    const info = await transporter.sendMail({
+      from: process.env.EMAIL_FROM,
+      to: email,
+      subject: "Download Regen on your iPhone",
+      html: `
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          </head>
+          <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background: linear-gradient(180deg, #0B1410 0%, #13241B 50%, #0B1410 100%);">
+            <table width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(180deg, #0B1410 0%, #13241B 50%, #0B1410 100%); padding: 40px 20px;">
+              <tr>
+                <td align="center">
+                  <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; background: #000000; border: 1px solid #27272a; border-radius: 12px; padding: 40px;">
+                    <tr>
+                      <td align="center" style="padding-bottom: 24px;">
+                        <h1 style="color: #85EFAC; font-size: 26px; font-weight: bold; margin: 0;">Get Regen on your iPhone</h1>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="color: #e5e7eb; font-size: 16px; line-height: 1.6;">
+                        <p style="margin: 0 0 24px 0;">Open this email on your iPhone and tap the button below to install Regen from the App Store.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" style="padding: 8px 0 24px 0;">
+                        <a href="${APP_STORE_URL}" style="display: inline-block; background: #85EFAC; color: #000000; font-weight: bold; text-decoration: none; padding: 14px 28px; border-radius: 9999px; font-size: 16px;">Download on the App Store</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="color: #a1a1aa; font-size: 13px; line-height: 1.6;">
+                        <p style="margin: 0 0 8px 0;">Or copy this link:</p>
+                        <p style="margin: 0; word-break: break-all;"><a href="${APP_STORE_URL}" style="color: #85EFAC;">${APP_STORE_URL}</a></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" style="padding-top: 24px; border-top: 1px solid #27272a;">
+                        <p style="color: #71717a; font-size: 14px; margin: 0;">© ${new Date().getFullYear()} Regen. All rights reserved.</p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </body>
+        </html>
+      `,
+    });
+
+    return { success: true, messageId: info.messageId };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : "Unknown error" };
+  }
+}
