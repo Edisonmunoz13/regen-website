@@ -36,7 +36,7 @@ const team: Member[] = [
   {
     name: "Daniel Prior",
     title: "Co-Founder",
-    bio: "Lifelong degen that somehow made it as an investor and start-up advisor.",
+    bio: "Spent a career in consulting and venture capital, now building the savings account he wishes he'd had. Still can't take his mind off West Ham losing again.",
     initials: "DP",
     image: "/images/daniel.jpeg",
     imageZoom: true,
@@ -45,9 +45,9 @@ const team: Member[] = [
     linkedin: "https://www.linkedin.com/in/danielprior/",
   },
   {
-    name: "Ben Bleier",
+    name: "Benson Bleier",
     title: "Co-Founder",
-    bio: "Lifelong gambler and former pro poker player. Building Regen for his younger self, helping degens stack cash while they play.",
+    bio: "Former full-time poker player. Building Regen for his younger self, helping bettors take chips off the table every time they play.",
     initials: "BB",
     image: "/images/ben.jpeg",
     linkedin: "https://www.linkedin.com/in/benson-bleier/",
@@ -55,10 +55,18 @@ const team: Member[] = [
   {
     name: "Horacio Muñoz",
     title: "Founding Engineer",
-    bio: "Natural-born competitor and sports enthusiast. As a chad full stack engineer, determined to build the best product to help bettors win more.",
+    bio: "Natural-born competitor and sports obsessive. Full-stack engineer set on building the sharpest product a bettor has ever used.",
     initials: "HM",
     image: "/images/horacio.jpg",
     linkedin: "https://www.linkedin.com/in/horacedev/",
+  },
+  {
+    name: "Alvaro Orellana",
+    title: "Senior Engineer",
+    bio: "Builds products people love and makes them sing. Once built a World Cup predictor to pit the AI models against each other.",
+    initials: "AO",
+    image: "/images/alvaro.jpg",
+    linkedin: "https://www.linkedin.com/in/tiveor/",
   },
 ];
 
@@ -77,11 +85,11 @@ export function Team() {
             Bettors building for bettors.
           </p>
         </div>
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {team.map((m) => (
             <article
               key={m.name}
-              className="flex flex-col items-center rounded-2xl border border-zinc-800/80 bg-zinc-900/50 p-8 text-center transition-all hover:border-emerald-500/50"
+              className="flex flex-col items-center rounded-2xl border border-zinc-800/80 bg-zinc-900/50 p-6 text-center transition-all hover:border-emerald-500/50"
             >
               {m.image ? (
                 <div className="h-24 w-24 overflow-hidden rounded-full ring-2 ring-emerald-500/40">
@@ -114,8 +122,10 @@ export function Team() {
               >
                 {m.title}
               </p>
-              <p className="mt-4 text-sm text-zinc-400">{m.bio}</p>
-              <div className="mt-5 flex gap-3">
+              <p className="mt-4 grow text-sm text-zinc-400">
+                {m.bio}
+              </p>
+              <div className="mt-auto flex gap-3 pt-5">
                 {m.linkedin && (
                   <a
                     href={m.linkedin}
