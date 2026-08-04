@@ -37,6 +37,7 @@ const companyLinks: FooterLink[] = [
 const legalLinks: FooterLink[] = [
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms of Service", href: "/terms-of-service" },
+  { label: "Electronic Consent", href: "/legal/electronic-consent" },
   { label: "Data Deletion", href: "/legal/data-deletion" },
 ];
 

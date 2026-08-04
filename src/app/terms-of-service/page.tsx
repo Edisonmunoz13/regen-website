@@ -74,9 +74,13 @@ export default function TermsOfServicePage() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-white mb-4">5. Electronic Communications Consent</h2>
               <p className="text-zinc-300 leading-relaxed">
-                You consent to receive all communications, agreements, and disclosures electronically, 
-                including this Terms of Service agreement, privacy policies, account statements, and 
-                other notices. You may withdraw consent by contacting us at hello@regeninvest.co, 
+                You consent to receive all communications, agreements, and disclosures electronically,
+                including this Terms of Service agreement, privacy policies, account statements, and
+                other notices, as described in our{" "}
+                <Link href="/legal/electronic-consent" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                  Electronic Communications Consent
+                </Link>
+                . You may withdraw consent by contacting us at hello@regeninvest.co,
                 but this may limit your ability to use the Services.
               </p>
             </section>
