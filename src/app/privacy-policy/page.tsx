@@ -97,7 +97,7 @@ export default function PrivacyPolicyPage() {
 
               <h3 className="text-xl font-semibold text-emerald-400 mb-3">1.2 Information from connected accounts</h3>
               <ul className="list-disc list-inside text-zinc-300 space-y-2 mb-6">
-                <li>From your Linked Bank Account, accessed through Plaid: account and routing numbers, balances, and transaction history.</li>
+                <li>From your Linked Bank Account, accessed through Plaid: account and routing numbers, balance, transaction history.</li>
                 <li>From each Linked Sportsbook, accessed through SharpSports: bets, wins, losses, and related Sportsbook Activity events.</li>
               </ul>
 
