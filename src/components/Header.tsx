@@ -197,7 +197,7 @@ export function Header() {
             className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/50 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:scale-105 hover:bg-zinc-900"
           >
             <AndroidLogo className="h-4 w-4" />
-            Add to waitlist for Android
+            Join Android Waitlist
           </button>
           <DownloadIosButton
             className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition-all hover:scale-105"
@@ -276,7 +276,7 @@ export function Header() {
               className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/50 px-5 py-3 text-sm font-semibold text-white"
             >
               <AndroidLogo className="h-4 w-4" />
-              Add to waitlist for Android
+              Join Android Waitlist
             </button>
             <DownloadIosButton
               className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white"
