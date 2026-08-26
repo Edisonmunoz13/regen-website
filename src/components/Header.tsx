@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { AppleLogo } from "./AppleLogo";
+import { AndroidLogo } from "./AndroidLogo";
 import { DownloadIosButton } from "./DownloadIosButton";
+import { JoinWaitlistModal } from "./JoinWaitlistModal";
 import { useEffect, useRef, useState } from "react";
 
 type NavLink = {
@@ -53,6 +55,7 @@ const navItems: NavItem[] = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [waitlistOpen, setWaitlistOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -189,6 +192,13 @@ export function Header() {
               </a>
             );
           })}
+          <button
+            onClick={() => setWaitlistOpen(true)}
+            className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/50 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:scale-105 hover:bg-zinc-900"
+          >
+            <AndroidLogo className="h-4 w-4" />
+            Add to waitlist for Android
+          </button>
           <DownloadIosButton
             className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition-all hover:scale-105"
             style={{ backgroundColor: "var(--regen-green)" }}
@@ -258,6 +268,16 @@ export function Header() {
                 </a>
               );
             })}
+            <button
+              onClick={() => {
+                setOpen(false);
+                setWaitlistOpen(true);
+              }}
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/50 px-5 py-3 text-sm font-semibold text-white"
+            >
+              <AndroidLogo className="h-4 w-4" />
+              Add to waitlist for Android
+            </button>
             <DownloadIosButton
               className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white"
               style={{ backgroundColor: "var(--regen-green)" }}
@@ -269,6 +289,11 @@ export function Header() {
           </div>
         </div>
       )}
+
+      <JoinWaitlistModal
+        open={waitlistOpen}
+        onClose={() => setWaitlistOpen(false)}
+      />
     </header>
   );
 }

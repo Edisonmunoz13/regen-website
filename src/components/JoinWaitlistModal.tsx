@@ -30,7 +30,15 @@ const Schema = z.object({
 
 type FormValues = z.infer<typeof Schema>;
 
-export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+export function JoinWaitlistModal({
+  open,
+  onClose,
+  platform = "android",
+}: {
+  open: boolean;
+  onClose: () => void;
+  platform?: string;
+}) {
   const [success, setSuccess] = useState(false);
   const [isPending, startTransition] = useTransition();
   const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm<FormValues>({ resolver: zodResolver(Schema) });
@@ -51,7 +59,7 @@ export function JoinWaitlistModal({ open, onClose }: { open: boolean; onClose: (
   const onSubmit = (values: FormValues) => {
     startTransition(async () => {
       try {
-        const res = await fetch("/api/waitlist", { method: "POST", body: JSON.stringify(values) });
+        const res = await fetch("/api/waitlist", { method: "POST", body: JSON.stringify({ ...values, platform }) });
         
         if (res.ok) {
           setSuccess(true);
