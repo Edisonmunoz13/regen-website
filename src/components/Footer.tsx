@@ -1,8 +1,21 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Twitter, Linkedin } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 
 type FooterLink = { label: string; href: string; external?: boolean };
+
+const socialLinks = [
+  {
+    Icon: Instagram,
+    label: "Instagram",
+    href: "https://www.instagram.com/regen_invest/",
+  },
+  {
+    Icon: Linkedin,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/regentechnology/",
+  },
+];
 
 const productLinks: FooterLink[] = [
   {
@@ -75,14 +88,12 @@ export function Footer() {
             © 2026 Regen. All rights reserved.
           </p>
           <div className="flex gap-3">
-            {[
-              { Icon: Instagram, label: "Instagram" },
-              { Icon: Twitter, label: "X" },
-              { Icon: Linkedin, label: "LinkedIn" },
-            ].map(({ Icon, label }) => (
+            {socialLinks.map(({ Icon, label, href }) => (
               <a
                 key={label}
-                href="#"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={label}
                 className="rounded-full border border-zinc-800/80 p-2 text-zinc-400 transition-colors hover:border-emerald-500 hover:text-emerald-400"
               >
