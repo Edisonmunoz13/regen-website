@@ -6,7 +6,6 @@ import { Features } from "@/components/Features";
 import { Pitch } from "@/components/Pitch";
 import { BackedBy } from "@/components/BackedBy";
 import { FinalCTA } from "@/components/FinalCTA";
-import { Ambassadors } from "@/components/Ambassadors";
 
 export default function Home() {
   return (
@@ -19,7 +18,6 @@ export default function Home() {
         <Features />
         <BackedBy />
         <FinalCTA />
-        <Ambassadors showBadge={false} />
       </main>
       <Footer />
     </div>
