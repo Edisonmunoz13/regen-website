@@ -38,7 +38,6 @@ const productLinks: FooterLink[] = [
 const companyLinks: FooterLink[] = [
   { label: "About", href: "/about" },
   { label: "Team", href: "/team" },
-  { label: "Ambassadors", href: "/partnerships/campus-ambassadors" },
   { label: "Affiliates", href: "/partnerships/affiliates" },
   {
     label: "Careers",

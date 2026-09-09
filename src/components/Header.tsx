@@ -40,7 +40,6 @@ const navItems: NavItem[] = [
     kind: "dropdown",
     label: "Partnerships",
     items: [
-      { label: "Campus Ambassadors", href: "/partnerships/campus-ambassadors" },
       { label: "Affiliates", href: "/partnerships/affiliates" },
     ],
   },
